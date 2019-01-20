@@ -38,23 +38,7 @@ namespace WielkieKino.App
 
         public static void Main(string[] args)
         {
-            MetodyPomocnicze metodyPomocnicze = new MetodyPomocnicze();
-            DataProcessing dataProcessing = new DataProcessing();
-            DateTime Date = new DateTime(2019, 1, 20, 12, 00, 00);
-
-            List<Sala> sale = dataProcessing.ZwrocSalePosortowanePoCalkowitejLiczbieMiejsc(SkladDanych.Sale);
-            Film film = dataProcessing.ZwrocFilmNaKtorySprzedanoNajwiecejBiletow(SkladDanych.Filmy, SkladDanych.Bilety);
-            List<Film> filmy = dataProcessing.PosortujFilmyPoDochodach(SkladDanych.Filmy, SkladDanych.Bilety);
-            //List<Film> filmyDnia = dataProcessing.WybierzFilmyPokazywaneDanegoDnia(SkladDanych.Seanse, Date);
-            Console.WriteLine(dataProcessing.ZwrocSaleGdzieJestNajwiecejSeansow(SkladDanych.Seanse, Date).Nazwa);
-            //Console.WriteLine(dataProcessing.PodajCalkowiteWplywyZBiletow(SkladDanych.Bilety));
-            //List<string> wynik = dataProcessing.WybierzFilmyZGatunku(SkladDanych.Filmy, "Fantasy");
-            foreach (var item in filmy)
-            {
-                Console.WriteLine(item.Tytul);
-            }
-
-            //Console.WriteLine(metodyPomocnicze.CalkowitePrzychodyZBiletow(SkladDanych.Bilety));
+            
 
             WyswietlPodgladSali(Dane.SkladDanych.Bilety, Dane.SkladDanych.Seanse[0]);
             Console.ReadKey();
