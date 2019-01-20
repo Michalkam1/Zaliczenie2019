@@ -54,5 +54,12 @@ namespace WielkieKino.Logic.Tests
             Sala sala = dataProcessing.ZwrocSaleGdzieJestNajwiecejSeansow(SkladDanych.Seanse, Date);
             Assert.AreEqual("Wisła", sala.Nazwa);
         }
+
+        [TestMethod()]
+        public void ZwrocFilmNaKtorySprzedanoNajwiecejBiletowTest()
+        {
+            Film film = dataProcessing.ZwrocFilmNaKtorySprzedanoNajwiecejBiletow(SkladDanych.Filmy, SkladDanych.Bilety);
+            Assert.AreEqual("Konan Destylator", film.Tytul);
+        }
     }
 }

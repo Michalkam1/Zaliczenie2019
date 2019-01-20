@@ -102,9 +102,13 @@ namespace WielkieKino.Logic
         /// <returns></returns>
         public Film ZwrocFilmNaKtorySprzedanoNajwiecejBiletow(List<Film> filmy, List<Bilet> bilety)
         {
+            var wynik = (from Bilet bilet in bilety
+                         group bilet by bilet.Seans into gr
+                         orderby gr.Count() descending
+                         select gr.Key).First();
 
             // Właściwa odpowiedź: "Konan Destylator"
-            return null;
+            return wynik.Film;
         }
 
         /// <summary>
