@@ -37,7 +37,14 @@ namespace WielkieKino.Logic.Tests
             List<Film> filmyDnia = dataProcessing.WybierzFilmyPokazywaneDanegoDnia(SkladDanych.Seanse, Date);
 
             Assert.AreEqual(7, filmyDnia.Count);
-         
+
+        }
+
+        [TestMethod()]
+        public void NajpopularniejszyGatunekTest()
+        {
+            string gatunek = dataProcessing.NajpopularniejszyGatunek(SkladDanych.Filmy);
+            Assert.AreEqual("Obyczajowy", gatunek);
         }
     }
 }

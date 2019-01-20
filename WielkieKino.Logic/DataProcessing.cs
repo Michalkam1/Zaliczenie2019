@@ -54,8 +54,15 @@ namespace WielkieKino.Logic
         /// <returns></returns>
         public string NajpopularniejszyGatunek(List<Film> filmy)
         {
+            var wynik = (from Film film in filmy
+                         group film by film.Gatunek into gr
+                        orderby gr.Count() descending
+                        select gr.Key).First();
+
+            return wynik;
+
             // Właściwa odpowiedź: Obyczajowy
-            return null;
+
         }
 
         public List<Sala> ZwrocSalePosortowanePoCalkowitejLiczbieMiejsc(List<Sala> sale)
@@ -92,6 +99,7 @@ namespace WielkieKino.Logic
         /// <returns></returns>
         public Film PosortujFilmyPoDochodach(List<Film> filmy, List<Bilet> bilety)
         {
+
             return null;
         }
 
