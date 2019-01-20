@@ -30,7 +30,8 @@ namespace WielkieKino.Dane.Tests
         [TestMethod()]
         public void LiczbaWolnychMiejscWSaliTest()
         {
-            Assert.Fail();
+            int liczbaWolnychMiejsc = metodyPomocnicze.LiczbaWolnychMiejscWSali(SkladDanych.Bilety, SkladDanych.Seanse[0]);
+            Assert.AreEqual(72, liczbaWolnychMiejsc);
         }
 
         [TestMethod()]

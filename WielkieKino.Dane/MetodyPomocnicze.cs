@@ -71,8 +71,19 @@ namespace WielkieKino.Dane
         /// <returns></returns>
         public int LiczbaWolnychMiejscWSali(List<Bilet> sprzedaneBilety, Seans seansDoSprawdzenia)
         {
+            List<Bilet> wynik = new List<Bilet>();
+           
+            foreach (Bilet bilet in SkladDanych.Bilety)
+            {
+                if (bilet.Seans == seansDoSprawdzenia)
+                    wynik.Add(bilet);
+            }
+
+            int LiczbaSprzedanychMiejsc = wynik.Count;
+            int liczbaMiejscwSali = seansDoSprawdzenia.Sala.LiczbaMiejscWRzedzie * seansDoSprawdzenia.Sala.LiczbaRzedow;
+
             // Właściwa odpowiedź: np. na pierwszy seans z listy seansów w klasie SkladDanych są 72 miejsca
-            return 0;
+            return liczbaMiejscwSali - LiczbaSprzedanychMiejsc;
         }
 
         public double CalkowitePrzychodyZBiletow(List<Bilet> sprzedaneBilety)
