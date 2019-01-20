@@ -14,7 +14,9 @@ namespace WielkieKino.Dane.Tests
         [TestMethod()]
         public void CzyMoznaKupicBiletTest()
         {
-            Assert.Fail();
+            MetodyPomocnicze metodyPomocnicze = new MetodyPomocnicze();
+            bool czyMoznaKupicBilet = metodyPomocnicze.CzyMoznaKupicBilet(SkladDanych.Bilety, SkladDanych.Seanse[0], 10, 10);
+            Assert.AreEqual(true, czyMoznaKupicBilet);
         }
 
         [TestMethod()]

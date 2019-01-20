@@ -22,7 +22,18 @@ namespace WielkieKino.Dane
         /// <returns></returns>
         public bool CzyMoznaKupicBilet(List<Bilet> sprzedaneBilety, Seans seans, int rzad, int miejsce)
         {
-            return false;
+            foreach (var bilet in sprzedaneBilety)
+            {
+                if (bilet.Seans.Date == seans.Date && 
+                    bilet.Seans.Film.Tytul == seans.Film.Tytul && 
+                    bilet.Seans.Sala.Nazwa == seans.Sala.Nazwa &&
+                    bilet.Rzad == rzad &&
+                    bilet.Miejsce == miejsce)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         /// <summary>
@@ -38,7 +49,18 @@ namespace WielkieKino.Dane
         {
             // np. nie można zagrać filmu "Egzamin" w sali Kameralnej 2019-01-20 o 17:00
             // można natomiast zagrać "Egzamin" w tej sali 2019-01-20 o 14:00
-            return false;
+            foreach (var seans in aktualneSeanse)
+            {
+                if (seans.Sala.Nazwa == sala.Nazwa)
+                {
+                    if (data >= seans.Date && data <= seans.Date.AddHours(film.CzasTrwania))
+                    {
+                        return false;
+                    }
+                }
+                
+            }
+            return true;
         }
 
         /// <summary>

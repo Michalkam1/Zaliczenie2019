@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WielkieKino.Lib;
+using WielkieKino.Dane;
+
 
 namespace WielkieKino.App
 {
@@ -36,7 +38,10 @@ namespace WielkieKino.App
 
         public static void Main(string[] args)
         {
+           
+
             WyswietlPodgladSali(Dane.SkladDanych.Bilety, Dane.SkladDanych.Seanse[0]);
+            Console.ReadKey();
             /* Przykładowo:
             ----------
             ----------
