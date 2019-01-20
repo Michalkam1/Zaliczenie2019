@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WielkieKino.Lib;
 using WielkieKino.Dane;
-
+using WielkieKino.Logic;
 
 namespace WielkieKino.App
 {
@@ -39,7 +39,15 @@ namespace WielkieKino.App
         public static void Main(string[] args)
         {
             MetodyPomocnicze metodyPomocnicze = new MetodyPomocnicze();
-            Console.WriteLine(metodyPomocnicze.CalkowitePrzychodyZBiletow(SkladDanych.Bilety));
+            DataProcessing dataProcessing = new DataProcessing();
+
+            List<string> wynik = dataProcessing.WybierzFilmyZGatunku(SkladDanych.Filmy, "Fantasy");
+            foreach (var item in wynik)
+            {
+                Console.WriteLine(item);
+            }
+
+            //Console.WriteLine(metodyPomocnicze.CalkowitePrzychodyZBiletow(SkladDanych.Bilety));
 
             WyswietlPodgladSali(Dane.SkladDanych.Bilety, Dane.SkladDanych.Seanse[0]);
             Console.ReadKey();

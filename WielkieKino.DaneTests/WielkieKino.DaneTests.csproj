@@ -56,6 +56,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="DataProcessingTests.cs" />
     <Compile Include="MetodyPomocniczeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,6 +71,10 @@
     <ProjectReference Include="..\WielkieKino.Lib\WielkieKino.Lib.csproj">
       <Project>{FCB35363-BFE5-4984-8448-175C9CE54C8C}</Project>
       <Name>WielkieKino.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WielkieKino.Logic\WielkieKino.Logic.csproj">
+      <Project>{E0232D1F-A35E-4459-8BD9-4827D38F2B2E}</Project>
+      <Name>WielkieKino.Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

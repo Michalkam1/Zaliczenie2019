@@ -16,7 +16,12 @@ namespace WielkieKino.Logic
         public List<string> WybierzFilmyZGatunku(List<Film> filmy, string gatunek)
         {
             // Właściwa odpowiedź: np. "Konan Destylator" dla "Fantasy"
-            return null;
+            List<string> wynik;
+            wynik = (from Film film in filmy
+                     where film.Gatunek == gatunek
+                     select film.Tytul
+                     ).ToList();
+            return wynik;
         }
 
         /// <summary>
