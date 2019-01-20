@@ -11,10 +11,11 @@ namespace WielkieKino.Dane.Tests
     [TestClass()]
     public class MetodyPomocniczeTests
     {
+        MetodyPomocnicze metodyPomocnicze = new MetodyPomocnicze();
         [TestMethod()]
         public void CzyMoznaKupicBiletTest()
         {
-            MetodyPomocnicze metodyPomocnicze = new MetodyPomocnicze();
+            
             bool czyMoznaKupicBilet = metodyPomocnicze.CzyMoznaKupicBilet(SkladDanych.Bilety, SkladDanych.Seanse[0], 10, 10);
             Assert.AreEqual(true, czyMoznaKupicBilet);
         }
@@ -22,7 +23,8 @@ namespace WielkieKino.Dane.Tests
         [TestMethod()]
         public void CzyMoznaDodacSeansTest()
         {
-            Assert.Fail();
+            bool czyMoznaDodacSeans = metodyPomocnicze.CzyMoznaDodacSeans(SkladDanych.Seanse, SkladDanych.Sale[0], SkladDanych.Filmy[0], new DateTime(2019, 1, 20, 14, 00, 00));
+            Assert.AreEqual(false, czyMoznaDodacSeans);
         }
 
         [TestMethod()]
