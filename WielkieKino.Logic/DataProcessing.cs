@@ -67,8 +67,9 @@ namespace WielkieKino.Logic
 
         public List<Sala> ZwrocSalePosortowanePoCalkowitejLiczbieMiejsc(List<Sala> sale)
         {
+            List<Sala> posortowaneSale = sale.OrderBy(x => x.LiczbaMiejscWRzedzie*x.LiczbaRzedow).ToList();
             // Właściwa odpowiedź: Kameralna, Bałtyk, Wisła (lub w odwrotnej kolejności)
-            return null;
+            return posortowaneSale;
         }
 
         public Sala ZwrocSaleGdzieJestNajwiecejSeansow(List<Seans> seanse, DateTime data)
