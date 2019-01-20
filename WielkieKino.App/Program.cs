@@ -39,7 +39,6 @@ namespace WielkieKino.App
         public static void Main(string[] args)
         {
             
-
             WyswietlPodgladSali(Dane.SkladDanych.Bilety, Dane.SkladDanych.Seanse[0]);
             Console.ReadKey();
             /* Przykładowo:

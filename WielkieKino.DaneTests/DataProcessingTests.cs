@@ -68,5 +68,12 @@ namespace WielkieKino.Logic.Tests
             List<Film> filmy = dataProcessing.PosortujFilmyPoDochodach(SkladDanych.Filmy, SkladDanych.Bilety);
             Assert.AreEqual("Konan Destylator", filmy.First().Tytul);
         }
+
+        [TestMethod()]
+        public void ZwrocSalePosortowanePoCalkowitejLiczbieMiejscTest()
+        {
+            List<Sala> posortowaneSale = dataProcessing.ZwrocSalePosortowanePoCalkowitejLiczbieMiejsc(SkladDanych.Sale);
+            Assert.AreEqual("Kameralna", posortowaneSale.First().Nazwa);
+        }
     }
 }
