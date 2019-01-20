@@ -31,8 +31,9 @@ namespace WielkieKino.Logic
         /// <returns></returns>
         public int PodajCalkowiteWplywyZBiletow(List<Bilet> bilety)
         {
+            double total = bilety.Sum(bilet => bilet.Cena);
             // Właściwa odpowiedź: 400
-            return -1;
+            return (int)total;
         }
 
         public List<Film> WybierzFilmyPokazywaneDanegoDnia(List<Seans> seanse, DateTime data)

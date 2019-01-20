@@ -21,5 +21,18 @@ namespace WielkieKino.Logic.Tests
             Assert.IsTrue(wynik.Contains("Konan Destylator"));
 
         }
+
+        [TestMethod()]
+        public void PodajCalkowiteWplywyZBiletowTest()
+        {
+            int total = dataProcessing.PodajCalkowiteWplywyZBiletow(SkladDanych.Bilety);
+            Assert.AreEqual(400, total);
+        }
+
+        [TestMethod()]
+        public void WybierzFilmyPokazywaneDanegoDniaTest()
+        {
+            Assert.Fail();
+        }
     }
 }
