@@ -44,15 +44,15 @@ namespace WielkieKino.App
 
             List<Sala> sale = dataProcessing.ZwrocSalePosortowanePoCalkowitejLiczbieMiejsc(SkladDanych.Sale);
             Film film = dataProcessing.ZwrocFilmNaKtorySprzedanoNajwiecejBiletow(SkladDanych.Filmy, SkladDanych.Bilety);
-
+            List<Film> filmy = dataProcessing.PosortujFilmyPoDochodach(SkladDanych.Filmy, SkladDanych.Bilety);
             //List<Film> filmyDnia = dataProcessing.WybierzFilmyPokazywaneDanegoDnia(SkladDanych.Seanse, Date);
             Console.WriteLine(dataProcessing.ZwrocSaleGdzieJestNajwiecejSeansow(SkladDanych.Seanse, Date).Nazwa);
             //Console.WriteLine(dataProcessing.PodajCalkowiteWplywyZBiletow(SkladDanych.Bilety));
             //List<string> wynik = dataProcessing.WybierzFilmyZGatunku(SkladDanych.Filmy, "Fantasy");
-            //foreach (var item in sale)
-            //{
-            //    Console.WriteLine(item.Nazwa);
-            //}
+            foreach (var item in filmy)
+            {
+                Console.WriteLine(item.Tytul);
+            }
 
             //Console.WriteLine(metodyPomocnicze.CalkowitePrzychodyZBiletow(SkladDanych.Bilety));
 

@@ -118,10 +118,21 @@ namespace WielkieKino.Logic
         /// <param name="filmy"></param>
         /// <param name="bilety"></param>
         /// <returns></returns>
-        public Film PosortujFilmyPoDochodach(List<Film> filmy, List<Bilet> bilety)
+        public List<Film> PosortujFilmyPoDochodach(List<Film> filmy, List<Bilet> bilety)
         {
+            List<Film> filmyPoDochodach = new List<Film>();
+            var wynik = (from Bilet bilet in bilety
+                         group bilet by bilet.Seans into gr
+                         orderby gr.Sum(x => x.Cena) descending
+                         select gr.Key).ToList();
 
-            return null;
+            foreach (var item in wynik)
+            {
+                filmyPoDochodach.Add(item.Film);
+            }
+
+
+            return filmyPoDochodach;
         }
 
 

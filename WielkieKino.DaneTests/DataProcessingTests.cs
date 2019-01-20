@@ -61,5 +61,12 @@ namespace WielkieKino.Logic.Tests
             Film film = dataProcessing.ZwrocFilmNaKtorySprzedanoNajwiecejBiletow(SkladDanych.Filmy, SkladDanych.Bilety);
             Assert.AreEqual("Konan Destylator", film.Tytul);
         }
+
+        [TestMethod()]
+        public void PosortujFilmyPoDochodachTest()
+        {
+            List<Film> filmy = dataProcessing.PosortujFilmyPoDochodach(SkladDanych.Filmy, SkladDanych.Bilety);
+            Assert.AreEqual("Konan Destylator", filmy.First().Tytul);
+        }
     }
 }
