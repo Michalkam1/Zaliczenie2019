@@ -41,12 +41,15 @@ namespace WielkieKino.App
             MetodyPomocnicze metodyPomocnicze = new MetodyPomocnicze();
             DataProcessing dataProcessing = new DataProcessing();
 
-            Console.WriteLine(dataProcessing.PodajCalkowiteWplywyZBiletow(SkladDanych.Bilety));
+            DateTime Date = new DateTime(2019, 1, 20, 12, 00, 00);
+            List<Film> filmyDnia = dataProcessing.WybierzFilmyPokazywaneDanegoDnia(SkladDanych.Seanse, Date);
+            
+            //Console.WriteLine(dataProcessing.PodajCalkowiteWplywyZBiletow(SkladDanych.Bilety));
             //List<string> wynik = dataProcessing.WybierzFilmyZGatunku(SkladDanych.Filmy, "Fantasy");
-            //foreach (var item in wynik)
-            //{
-            //    Console.WriteLine(item);
-            //}
+            foreach (var item in filmyDnia)
+            {
+                Console.WriteLine(item.Tytul);
+            }
 
             //Console.WriteLine(metodyPomocnicze.CalkowitePrzychodyZBiletow(SkladDanych.Bilety));
 

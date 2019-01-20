@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WielkieKino.Dane;
+using WielkieKino.Lib;
 
 namespace WielkieKino.Logic.Tests
 {
@@ -32,7 +33,11 @@ namespace WielkieKino.Logic.Tests
         [TestMethod()]
         public void WybierzFilmyPokazywaneDanegoDniaTest()
         {
-            Assert.Fail();
+            DateTime Date = new DateTime(2019, 1, 20, 12, 00, 00);
+            List<Film> filmyDnia = dataProcessing.WybierzFilmyPokazywaneDanegoDnia(SkladDanych.Seanse, Date);
+
+            Assert.AreEqual(7, filmyDnia.Count);
+         
         }
     }
 }

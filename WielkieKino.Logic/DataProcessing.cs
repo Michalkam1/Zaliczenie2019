@@ -38,7 +38,12 @@ namespace WielkieKino.Logic
 
         public List<Film> WybierzFilmyPokazywaneDanegoDnia(List<Seans> seanse, DateTime data)
         {
-            return null;
+            List<Film> wynik;
+            wynik = (from Seans seans in seanse
+                     where seans.Date.Day == data.Day
+                     select seans.Film
+                     ).ToList();
+            return wynik;
         }
 
         /// <summary>
