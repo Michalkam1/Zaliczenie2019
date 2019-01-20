@@ -46,5 +46,13 @@ namespace WielkieKino.Logic.Tests
             string gatunek = dataProcessing.NajpopularniejszyGatunek(SkladDanych.Filmy);
             Assert.AreEqual("Obyczajowy", gatunek);
         }
+
+        [TestMethod()]
+        public void ZwrocSaleGdzieJestNajwiecejSeansowTest()
+        {
+            DateTime Date = new DateTime(2019, 1, 20, 12, 00, 00);
+            Sala sala = dataProcessing.ZwrocSaleGdzieJestNajwiecejSeansow(SkladDanych.Seanse, Date);
+            Assert.AreEqual("Wisła", sala.Nazwa);
+        }
     }
 }

@@ -74,8 +74,23 @@ namespace WielkieKino.Logic
 
         public Sala ZwrocSaleGdzieJestNajwiecejSeansow(List<Seans> seanse, DateTime data)
         {
+            List<Seans> seanseDlaDaty;
+            seanseDlaDaty = (from Seans seans in seanse
+                     where seans.Date.Day == data.Day
+                     select seans
+                     ).ToList();
+
+            var wynik = (from Seans seans in seanseDlaDaty
+                         group seans by seans.Sala into gr
+                         orderby gr.Count() descending
+                         select gr.Key).First();
+
+            return wynik;
+
+           
+
             // Właściwa odpowiedź dla daty 2019-01-20: sala "Wisła" 
-            return null;
+            
         }
 
         /// <summary>
@@ -87,6 +102,7 @@ namespace WielkieKino.Logic
         /// <returns></returns>
         public Film ZwrocFilmNaKtorySprzedanoNajwiecejBiletow(List<Film> filmy, List<Bilet> bilety)
         {
+
             // Właściwa odpowiedź: "Konan Destylator"
             return null;
         }
