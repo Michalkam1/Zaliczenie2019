@@ -88,8 +88,13 @@ namespace WielkieKino.Dane
 
         public double CalkowitePrzychodyZBiletow(List<Bilet> sprzedaneBilety)
         {
+            double przychod = 0.0;
+            foreach (var bilet in sprzedaneBilety)
+            {
+                przychod += bilet.Cena;
+            }
             // Właściwa odpowiedź: 400.00
-            return 0.0;
+            return przychod;
         }
     }
 }

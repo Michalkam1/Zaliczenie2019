@@ -39,7 +39,7 @@ namespace WielkieKino.App
         public static void Main(string[] args)
         {
             MetodyPomocnicze metodyPomocnicze = new MetodyPomocnicze();
-            Console.WriteLine(metodyPomocnicze.LiczbaWolnychMiejscWSali(SkladDanych.Bilety, SkladDanych.Seanse[0]));
+            Console.WriteLine(metodyPomocnicze.CalkowitePrzychodyZBiletow(SkladDanych.Bilety));
 
             WyswietlPodgladSali(Dane.SkladDanych.Bilety, Dane.SkladDanych.Seanse[0]);
             Console.ReadKey();

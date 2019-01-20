@@ -37,7 +37,8 @@ namespace WielkieKino.Dane.Tests
         [TestMethod()]
         public void CalkowitePrzychodyZBiletowTest()
         {
-            Assert.Fail();
+            double przychod = metodyPomocnicze.CalkowitePrzychodyZBiletow(SkladDanych.Bilety);
+            Assert.AreEqual(400, przychod);
         }
     }
 }
